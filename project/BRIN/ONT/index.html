@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Analysis: QC, Assembly, and Polishing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            margin: 0 0 1em;
+        }
+        .section {
+            margin-bottom: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DNA Analysis: Quality Control, Assembly de Novo, and Polishing</h1>
+
+        <div class="section" id="qc">
+            <h2>Quality Control (QC)</h2>
+            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. The main objectives of QC are to assess the quality of the raw sequencing data, identify any potential issues, and take corrective measures if necessary.</p>
+            <h3>Steps in QC</h3>
+            <ul>
+                <li><strong>Raw Data Inspection:</strong> Examine the raw sequencing reads for overall quality, looking at metrics such as read length distribution, base quality scores, and GC content.</li>
+                <li><strong>Adapter Trimming:</strong> Remove adapter sequences and low-quality bases from the reads to improve the quality of the data.</li>
+                <li><strong>Quality Filtering:</strong> Filter out low-quality reads that do not meet the specified quality thresholds.</li>
+                <li><strong>Contamination Check:</strong> Identify and remove any contaminant sequences that may have been introduced during the sequencing process.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="assembly">
+            <h2>Assembly de Novo</h2>
+            <p>De novo assembly is the process of reconstructing the original DNA sequence from short sequencing reads without the use of a reference genome. This method is particularly useful for sequencing genomes of organisms for which no reference genome is available.</p>
+            <h3>Key Concepts</h3>
+            <ul>
+                <li><strong>Read Overlap:</strong> Identifying overlaps between sequencing reads to assemble them into longer contiguous sequences (contigs).</li>
+                <li><strong>Contig Construction:</strong> Merging overlapping reads into contigs, which represent contiguous DNA sequences.</li>
+                <li><strong>Scaffolding:</strong> Ordering and orienting contigs using paired-end reads or mate-pair reads to form scaffolds.</li>
+                <li><strong>Gap Filling:</strong> Closing gaps between contigs within scaffolds to produce a more complete assembly.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="polishing">
+            <h2>Polishing</h2>
+            <p>Polishing is the process of refining the assembled genome to correct errors and improve accuracy. This step is essential to ensure that the final assembly is of high quality and accurately represents the original DNA sequence.</p>
+            <h3>Polishing Techniques</h3>
+            <ul>
+                <li><strong>Error Correction:</strong> Use algorithms to identify and correct sequencing errors such as insertions, deletions, and substitutions.</li>
+                <li><strong>Read Alignment:</strong> Align raw sequencing reads back to the assembled genome to identify discrepancies and make corrections.</li>
+                <li><strong>Consensus Building:</strong> Generate a consensus sequence that represents the most likely sequence based on the aligned reads.</li>
+                <li><strong>Validation:</strong> Use independent sequencing technologies or additional data to validate the accuracy of the polished assembly.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
