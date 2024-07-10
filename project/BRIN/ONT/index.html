@@ -122,8 +122,8 @@
         <p>The authors performed whole genome sequencing on Blue Indian Peacock using ONT and Illumina. In this training we will use only Illumina reads. This reads was generated from MinION devices
             using Flowcell FLO-MIN106 and kit SQK-LSK108.</p>
             <ul>
-            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.01.fastq?download=1">https://zenodo.org/records/12706524/files/peacock_0.01.fastq</a> (subsampled to 1% reads, 33,9 Mb)</li>
-            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.05.fastq?download=1">https://zenodo.org/records/12706524/files/peacock_0.05.fastq</a> (subsampled to 5% reads, 165,4 Mb)</li></ul>
+            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.01.fastq">https://zenodo.org/records/12706524/files/peacock_0.01.fastq</a> (subsampled to 1% reads, 33,9 Mb)</li>
+            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.05.fastq">https://zenodo.org/records/12706524/files/peacock_0.05.fastq</a> (subsampled to 5% reads, 165,4 Mb)</li></ul>
         </div>    
 
     </div>
@@ -137,7 +137,21 @@
            Checking the quality and making some decisions for the downstream analysis can influence the outcome of your project. This is very important for long-read sequences like ONT. </p>
             <p>Nanopore sequencing is known for its relatively high error rates, particularly in homopolymeric regions (stretches of the same nucleotide). The error rate can range from 5% to 15%, although recent advancements have improved this somewhat. 
             The accuracy of base calling in nanopore sequencing can be compromised due to the complex process of interpreting changes in electrical current as DNA passes through the nanopore. While improvements in algorithms and technology are ongoing, base calling remains less accurate than Illumina.</p>
-        </div>
+        
+        <h3>Steps to do:</h3>
+            <h4>Upload data</h4>
+            <ul>
+                <li>Click <strong>Upload Data</strong> button (upper left), then choose <strong>Paste/Fetch data</strong></li>
+                <li>In the new pop-up windowd leave file name as default <strong>New File</strong>, copy and paste the peacock reads link above (choose either 1% or 5%) on the box under file name</li>
+                <li>Hit blue <strong>Start</strong> button and read will be downloaded directly to UseGalaxy</li>
+            </ul>    
+            
+            <h4>Quality check with NanoPlot</h4>
+            <ul>
+                <li>In the search box of tools (upper left), type <strong>NanoPlot</strong>, then click on the search result "<strong>NanoPlot</strong>: Plotting suite for Oxford....."</li>
+                <li>on the middle workspace, NanoPlot parameter will be displayed</li>
+            </ul>
+            </div>
     </div>
 
     <div class="container" id="assembly-section">
