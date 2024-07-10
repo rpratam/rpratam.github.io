@@ -20,6 +20,7 @@
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            text-align: center;
         }
         h1, h2, h3 {
             color: #333;
@@ -42,11 +43,16 @@
         .nav a:hover {
             text-decoration: underline;
         }
+                div {
+  text-align: justify;
+  text-justify: inter-word;}
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Whole Genome Assembly of Bird Genome: quick hands-on using ONT reads</h1>
+        <h3>Dr. rer. nat. Rahadian Pratama, S.Si., M.Si.</h3>
+        <h4>rahadian@apps.ipb.ac.id</h4>
         <div class="nav">
             <a href="#intro">What is DNA Assembly?</a>
             <a href="#setup">Setup your UseGalaxy</a>
@@ -66,8 +72,13 @@
             <h3>Reference-guided Assembly</h3>
             <p>This strategy utilize reference sequence as template to assemble DNA fragments. Prior knowledge of target DNA must been known before assembly process. 
             This strategy use less computation resources, fast, and able to achieve high contiguous assembly.</p>
-            <p>However, reference-guided assembly is not without its disadvantages. For starters, structural variations cannot be detected, as reference template will dictate the assembly process.
-            </p>
+            <p>However, reference-guided assembly is not without its disadvantages. For starters, structural variations cannot be detected, as assembled sequence will be biased toward reference DNA structure.
+            Due to bias toward reference, more diverged regions may not be reconstructed and missing, lead to reduced diversity in the target assembly.</p>
+            
+            <h3>De Novo Assembly</h3>
+            <p>De novo means no prior knowledge being used in the assembly process. No reference being used in this assembly, reads are being stitched from scratch.
+            De novo assembly are superior that reference-guided assembly in term discovering structure variants within the target genome.</p>
+            
             <h3>Steps in QC</h3>
             <ul>
                 <li><strong>Raw Data Inspection:</strong> Examine the raw sequencing reads for overall quality, looking at metrics such as read length distribution, base quality scores, and GC content.</li>
