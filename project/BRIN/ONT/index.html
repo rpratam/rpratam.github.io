@@ -31,12 +31,15 @@
         .section {
             margin-bottom: 2em;
         }
+        .image {
+            text-align: center
+        }
         .nav {
             text-align: center;
             margin-bottom: 20px;
         }
         .nav a {
-            margin: 0 10px;
+            margin: 0 8px;
             text-decoration: none;
             color: #007BFF;
         }
@@ -80,38 +83,32 @@
             De novo assembly are superior that reference-guided assembly in term discovering structure variants within the target genome.</p>
             <p>De novo assembly have its disadvantages compared to reference-guided assembly, which is more heavy in assembly computation. More computing resources are needed for de novo assembly, make it 
             hard to perform assembly on complex genome such as eukaryotes.</p>
-             <img src="images/assembly.png" alt="DNA Assembly">
-            
-            </div>
+        </div>
+        <div class="image" id="image1">
+            <img src="images/assembly.png" alt="DNA Assembly">
+            <h4>Figure 1. DNA assembly strategies. Reference-guided assembly often called resequencing.</h4>
+        </div>    
     </div>
     
     <div class="container" id="setup">
-        <h1>Quality Control (QC)</h1>
-        <div class="section" id="setup_tools">
-            <h2>Overview</h2>
-            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. The main objectives of QC are to assess the quality of the raw sequencing data, identify any potential issues, and take corrective measures if necessary.</p>
-            <h3>Steps in QC</h3>
-            <ul>
-                <li><strong>Raw Data Inspection:</strong> Examine the raw sequencing reads for overall quality, looking at metrics such as read length distribution, base quality scores, and GC content.</li>
-                <li><strong>Adapter Trimming:</strong> Remove adapter sequences and low-quality bases from the reads to improve the quality of the data.</li>
-                <li><strong>Quality Filtering:</strong> Filter out low-quality reads that do not meet the specified quality thresholds.</li>
-                <li><strong>Contamination Check:</strong> Identify and remove any contaminant sequences that may have been introduced during the sequencing process.</li>
-            </ul>
+        <h1>UseGalaxy Web Server</h1>
+        <div class="section" id="usegalaxy">
+            <p>In order to run bioinformatic analysis, participant must have an account at <a href="https://usegalaxy.eu">usegalaxy.eu</a> webserver</p>
+        </div>    
+        <div class="image" id="image2">
+        <img src="images/usegalaxy.png" alt="UseGalaxy Europe Portal">
         </div>
     </div>
 
-    <div class="container" id="qc-section">
+        <div class="container" id="qc-section">
         <h1>Quality Control (QC)</h1>
-        <div class="section" id="qc">
+        <div class="section" id="quality-check">
             <h2>Overview</h2>
-            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. The main objectives of QC are to assess the quality of the raw sequencing data, identify any potential issues, and take corrective measures if necessary.</p>
-            <h3>Steps in QC</h3>
-            <ul>
-                <li><strong>Raw Data Inspection:</strong> Examine the raw sequencing reads for overall quality, looking at metrics such as read length distribution, base quality scores, and GC content.</li>
-                <li><strong>Adapter Trimming:</strong> Remove adapter sequences and low-quality bases from the reads to improve the quality of the data.</li>
-                <li><strong>Quality Filtering:</strong> Filter out low-quality reads that do not meet the specified quality thresholds.</li>
-                <li><strong>Contamination Check:</strong> Identify and remove any contaminant sequences that may have been introduced during the sequencing process.</li>
-            </ul>
+            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. </p>
+            <p>The sequencing technologies usually produce basecalls with varying quality. In addition, there could be sample-specific issues in your sequencing run, such as adapter contamination. It is standard procedure to check the quality of the reads and identify problems before doing further analysis. 
+           Checking the quality and making some decisions for the downstream analysis can influence the outcome of your project. This is very important for long-read sequences like ONT. </p>
+            <p>Nanopore sequencing is known for its relatively high error rates, particularly in homopolymeric regions (stretches of the same nucleotide). The error rate can range from 5% to 15%, although recent advancements have improved this somewhat. 
+            The accuracy of base calling in nanopore sequencing can be compromised due to the complex process of interpreting changes in electrical current as DNA passes through the nanopore. While improvements in algorithms and technology are ongoing, base calling remains less accurate than Illumina.</p>
         </div>
     </div>
 
