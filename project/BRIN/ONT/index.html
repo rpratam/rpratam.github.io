@@ -97,7 +97,7 @@
         </div>
         <div class="image" id="image1">
             <img src="images/assembly.png" alt="DNA Assembly">
-            <h4>Figure 1. DNA assembly strategies. Reference-guided assembly often called resequencing.</h4>
+            <h5>Figure 1. DNA assembly strategies. Reference-guided assembly often called resequencing.</h5>
         </div>    
     </div>
     
@@ -108,11 +108,11 @@
         </div>    
         <div class="image" id="image2">
         <img src="images/usegalaxy.png" alt="UseGalaxy Europe Portal">
-        <h4>Figure 2. UseGalaxy web server on Europe portal</h4></div>
+        <h5>Figure 2. UseGalaxy web server on Europe portal</h5></div>
         <div class="section" id="usegalaxy2">
         <h3>Things to do</h3>
             <ul>
-                <li><strong>Login:</strong> login to UseGalaxt using your own credential. Create one if haven't.</li>
+                <li><strong>Login:</strong> login to UseGalaxy using your own credential. Create one if haven't.</li>
                 <li><strong>History:</strong> Always use new history for different analysis project/subproject. Never mixed up analysis!</li>
                 <li><strong>Prepare data:</strong> Make sure you have your data available to upload/fetch, look below for example data in this training.</li>
                 <li><strong>Ask:</strong> If you have any question or need help :-)</li>
@@ -149,37 +149,51 @@
             <h4>Quality check with NanoPlot</h4>
             <ul>
                 <li>In the search box of tools (upper left), type <strong>NanoPlot</strong>, then click on the search result "<strong>NanoPlot</strong>: Plotting suite for Oxford....."</li>
-                <li>on the middle workspace, NanoPlot parameter will be displayed</li>
+                <li>on the middle workspace, NanoPlot parameter will be displayed. Make sure you select the uploaded fastq file in the "<strong>files</strong>" option</li>
+                <li>Under <strong>Options for filtering or transforming input prior to plotting</strong>, set <i><strong>--readtype</strong></i> to "<strong>1D</strong>"</li>
+                <li>Under <strong>Options for customizing the plots created</strong>, set <i><strong>--color</strong></i> to "<strong>crimson</strong>", 
+                <i><strong>--plots</strong></i> to "<strong>dots</strong>", <i><strong>--N50</strong></i> to "<strong>Yes</strong>"</li>
+                <li>Hit the <strong>Run tool</strong> button to start the QC</li>
             </ul>
             </div>
     </div>
 
     <div class="container" id="assembly-section">
-        <h1>Assembly de Novo</h1>
+        <h1>Assembly de Novo with Flye</h1>
         <div class="section" id="assembly">
             <h2>Overview</h2>
-            <p>De novo assembly is the process of reconstructing the original DNA sequence from short sequencing reads without the use of a reference genome. This method is particularly useful for sequencing genomes of organisms for which no reference genome is available.</p>
-            <h3>Key Concepts</h3>
+            <p>Flye is using a repeat graph as the core data structure. Compared to de Bruijn graphs (which require exact k-mer matches), repeat graphs are built using approximate sequence matches, and can tolerate the higher noise of SMS reads.
+                The edges of a repeat graph represent the genomic sequence, and nodes define the junctions. Each edge is classified as unique or repetitive. The genome traverses the graph (in an unknown way), so each unique edge appears exactly once in this traversal. 
+                Repeat graphs reveal the repeat structure of the genome, which helps to reconstruct an optimal assembly.</p>
+            </div>
+        <div class="image" id="image3">
+        <img src="images/flye.png" alt="Flye Assembler">
+        <h5>Figure 3. Repeat graph of bacteria assembly using Flye.  Each edge is labeled with its id, length, and coverage. Repetitive edges are shown in color, and unique edges are black.</h5></div>
+        
+        <div class="section" id="assembly2">
+        <h4>Assembly with Flye</h4>
             <ul>
-                <li><strong>Read Overlap:</strong> Identifying overlaps between sequencing reads to assemble them into longer contiguous sequences (contigs).</li>
-                <li><strong>Contig Construction:</strong> Merging overlapping reads into contigs, which represent contiguous DNA sequences.</li>
-                <li><strong>Scaffolding:</strong> Ordering and orienting contigs using paired-end reads or mate-pair reads to form scaffolds.</li>
-                <li><strong>Gap Filling:</strong> Closing gaps between contigs within scaffolds to produce a more complete assembly.</li>
+                <li>In the search box of tools (upper left), type <strong>Flye</strong>, then click on the search result "<strong>Flye</strong> de novo assembler....."</li>
+                <li>on the middle workspace, Flye parameter will be displayed. Make sure you select the uploaded fastq file in the "<strong>Input reads</strong>" option</li>
+                <li>Set <strong>Mode</strong> to "<strong>Nanopore raw (--nano-raw)</strong>"</li>
+                <li>Set <strong>Enable scaffolding using graph</strong> to "<strong>Yes</strong>" </li>
+                <li>Leave everything else to default, then hit the <strong>Run tool</strong> button to start the assembly</li>
             </ul>
+            </div>
         </div>
-    </div>
 
     <div class="container" id="polishing-section">
-        <h1>Polishing</h1>
+        <h1>Assembly Polishing with Medaka</h1>
         <div class="section" id="polishing">
             <h2>Overview</h2>
-            <p>Polishing is the process of refining the assembled genome to correct errors and improve accuracy. This step is essential to ensure that the final assembly is of high quality and accurately represents the original DNA sequence.</p>
-            <h3>Polishing Techniques</h3>
+            <p>Medaka is a tool to create consensus sequences and variant calls from nanopore sequencing data. This task is performed using neural networks applied a pileup of individual sequencing reads against a draft assembly. It provides state-of-the-art results outperforming sequence-graph based methods and signal-based methods, whilst also being faster.</p>
+          
+            <h4>Polishing with medaka consensus pipeline</h4>
             <ul>
-                <li><strong>Error Correction:</strong> Use algorithms to identify and correct sequencing errors such as insertions, deletions, and substitutions.</li>
-                <li><strong>Read Alignment:</strong> Align raw sequencing reads back to the assembled genome to identify discrepancies and make corrections.</li>
-                <li><strong>Consensus Building:</strong> Generate a consensus sequence that represents the most likely sequence based on the aligned reads.</li>
-                <li><strong>Validation:</strong> Use independent sequencing technologies or additional data to validate the accuracy of the polished assembly.</li>
+                <li>In the search box of tools (upper left), type <strong>Medaka</strong>, then click on the search result "<strong>medaka consensus pipeline</strong> assembly polishing....."</li>
+                <li>on the middle workspace, medaka parameter will be displayed. Select the uploaded fastq under "<strong>Select basecalls</strong>" and contig result of Flye under "<strong>Select assembly</strong>"</li>
+                <li>Set <strong>Select model</strong> to "<strong>R941_min_high_g360</strong>"</li>
+                <li>Leave everything else to default, then hit the <strong>Run tool</strong> button to start the polishing</li>
             </ul>
         </div>
     </div>
