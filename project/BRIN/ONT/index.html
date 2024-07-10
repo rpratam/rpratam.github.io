@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNA Analysis: QC, Assembly de Novo, and Polishing</title>
+    <title>Whole Genome Assembly of Bird Genome: quick hands-on</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,11 +46,43 @@
 </head>
 <body>
     <div class="container">
-        <h1>DNA Analysis: Quality Control, Assembly de Novo, and Polishing</h1>
+        <h1>Whole Genome Assembly of Bird Genome: quick hands-on using ONT reads</h1>
         <div class="nav">
+            <a href="#intro">What is DNA Assembly?</a>
+            <a href="#setup">Setup your UseGalaxy</a>
             <a href="#qc-section">Quality Control (QC)</a>
             <a href="#assembly-section">Assembly de Novo</a>
             <a href="#polishing-section">Polishing</a>
+        </div>
+    </div>
+
+        <div class="container" id="intro">
+        <h1>What is DNA Assembly?</h1>
+        <div class="section" id="setup_tools">
+            <h2>Overview</h2>
+            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. The main objectives of QC are to assess the quality of the raw sequencing data, identify any potential issues, and take corrective measures if necessary.</p>
+            <h3>Steps in QC</h3>
+            <ul>
+                <li><strong>Raw Data Inspection:</strong> Examine the raw sequencing reads for overall quality, looking at metrics such as read length distribution, base quality scores, and GC content.</li>
+                <li><strong>Adapter Trimming:</strong> Remove adapter sequences and low-quality bases from the reads to improve the quality of the data.</li>
+                <li><strong>Quality Filtering:</strong> Filter out low-quality reads that do not meet the specified quality thresholds.</li>
+                <li><strong>Contamination Check:</strong> Identify and remove any contaminant sequences that may have been introduced during the sequencing process.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container" id="setup">
+        <h1>Quality Control (QC)</h1>
+        <div class="section" id="setup_tools">
+            <h2>Overview</h2>
+            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. The main objectives of QC are to assess the quality of the raw sequencing data, identify any potential issues, and take corrective measures if necessary.</p>
+            <h3>Steps in QC</h3>
+            <ul>
+                <li><strong>Raw Data Inspection:</strong> Examine the raw sequencing reads for overall quality, looking at metrics such as read length distribution, base quality scores, and GC content.</li>
+                <li><strong>Adapter Trimming:</strong> Remove adapter sequences and low-quality bases from the reads to improve the quality of the data.</li>
+                <li><strong>Quality Filtering:</strong> Filter out low-quality reads that do not meet the specified quality thresholds.</li>
+                <li><strong>Contamination Check:</strong> Identify and remove any contaminant sequences that may have been introduced during the sequencing process.</li>
+            </ul>
         </div>
     </div>
 
