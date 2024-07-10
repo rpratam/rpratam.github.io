@@ -31,8 +31,19 @@
         .section {
             margin-bottom: 2em;
         }
+        
         .image {
-            text-align: center
+            text-align: center;
+        }
+        img {
+            display: grid;
+            height: auto;
+            width: 600px;
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
         }
         .nav {
             text-align: center;
@@ -97,7 +108,24 @@
         </div>    
         <div class="image" id="image2">
         <img src="images/usegalaxy.png" alt="UseGalaxy Europe Portal">
-        </div>
+        <h4>Figure 2. UseGalaxy web server on Europe portal</h4></div>
+        <div class="section" id="usegalaxy2">
+        <h3>Things to do</h3>
+            <ul>
+                <li><strong>Login:</strong> login to UseGalaxt using your own credential. Create one if haven't.</li>
+                <li><strong>History:</strong> Always use new history for different analysis project/subproject. Never mixed up analysis!</li>
+                <li><strong>Prepare data:</strong> Make sure you have your data available to upload/fetch, look below for example data in this training.</li>
+                <li><strong>Ask:</strong> If you have any question or need help :-)</li>
+            </ul>
+        <p> </p>
+        <p>For this training we will use data from Dhar et al. (2019) <a href="https://doi.org/10.1093/gigascience/giz038">https://doi.org/10.1093/gigascience/giz038</a></p>
+        <p>The authors performed whole genome sequencing on Blue Indian Peacock using ONT and Illumina. In this training we will use only Illumina reads. This reads was generated from MinION devices
+            using Flowcell FLO-MIN106 and kit SQK-LSK108.</p>
+            <ul>
+            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.01.fastq?download=1">https://zenodo.org/records/12706524/files/peacock_0.01.fastq</a> (subsampled to 1% reads, 33,9 Mb)</li>
+            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.05.fastq?download=1">https://zenodo.org/records/12706524/files/peacock_0.05.fastq</a> (subsampled to 5% reads, 165,4 Mb)</li></ul>
+        </div>    
+
     </div>
 
         <div class="container" id="qc-section">
