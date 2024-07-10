@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNA Analysis: QC, Assembly, and Polishing</title>
+    <title>DNA Analysis: QC, Assembly de Novo, and Polishing</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,6 +19,7 @@
             padding: 20px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
         h1, h2, h3 {
             color: #333;
@@ -32,11 +33,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DNA Analysis: Quality Control, Assembly de Novo, and Polishing</h1>
-
+    <div class="container" id="qc-section">
+        <h1>Quality Control (QC)</h1>
         <div class="section" id="qc">
-            <h2>Quality Control (QC)</h2>
+            <h2>Overview</h2>
             <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. The main objectives of QC are to assess the quality of the raw sequencing data, identify any potential issues, and take corrective measures if necessary.</p>
             <h3>Steps in QC</h3>
             <ul>
@@ -46,9 +46,12 @@
                 <li><strong>Contamination Check:</strong> Identify and remove any contaminant sequences that may have been introduced during the sequencing process.</li>
             </ul>
         </div>
+    </div>
 
+    <div class="container" id="assembly-section">
+        <h1>Assembly de Novo</h1>
         <div class="section" id="assembly">
-            <h2>Assembly de Novo</h2>
+            <h2>Overview</h2>
             <p>De novo assembly is the process of reconstructing the original DNA sequence from short sequencing reads without the use of a reference genome. This method is particularly useful for sequencing genomes of organisms for which no reference genome is available.</p>
             <h3>Key Concepts</h3>
             <ul>
@@ -58,9 +61,12 @@
                 <li><strong>Gap Filling:</strong> Closing gaps between contigs within scaffolds to produce a more complete assembly.</li>
             </ul>
         </div>
+    </div>
 
+    <div class="container" id="polishing-section">
+        <h1>Polishing</h1>
         <div class="section" id="polishing">
-            <h2>Polishing</h2>
+            <h2>Overview</h2>
             <p>Polishing is the process of refining the assembled genome to correct errors and improve accuracy. This step is essential to ensure that the final assembly is of high quality and accurately represents the original DNA sequence.</p>
             <h3>Polishing Techniques</h3>
             <ul>
