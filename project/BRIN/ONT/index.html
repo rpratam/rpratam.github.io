@@ -58,9 +58,16 @@
 
         <div class="container" id="intro">
         <h1>What is DNA Assembly?</h1>
-        <div class="section" id="setup_tools">
+        <div class="section" id="intro-assembly">
             <h2>Overview</h2>
-            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. The main objectives of QC are to assess the quality of the raw sequencing data, identify any potential issues, and take corrective measures if necessary.</p>
+            <p>DNA assembly in short is the act to build a complete picture of longer DNA sequence (chromosome, genome) from thousand to million 
+                pieces of reads. In general, <u>strategy for DNA assembly</u> is either reference-guided assembly or de novo assembly. 
+            
+            <h3>Reference-guided Assembly</h3>
+            <p>This strategy utilize reference sequence as template to assemble DNA fragments. Prior knowledge of target DNA must been known before assembly process. 
+            This strategy use less computation resources, fast, and able to achieve high contiguous assembly.</p>
+            <p>However, reference-guided assembly is not without its disadvantages. For starters, structural variations cannot be detected, as reference template will dictate the assembly process.
+            </p>
             <h3>Steps in QC</h3>
             <ul>
                 <li><strong>Raw Data Inspection:</strong> Examine the raw sequencing reads for overall quality, looking at metrics such as read length distribution, base quality scores, and GC content.</li>
