@@ -70,6 +70,7 @@
         <h4>rahadian@apps.ipb.ac.id</h4>
         <div class="nav">
             <a href="#intro">Instalasi WSL2 pada Windows</a>
+            <a href="#basic">Perintah Dasar Linux</a>
         </div>
     </div>
 
@@ -166,5 +167,104 @@
           </ul>
         </div>
       </div>
+
+      <div class="container" id="basic">
+          <h1>Perintah Dasar Linux</h1>
+          <div class="section" id="perintah_dasar">
+      <h1>Panduan Perintah Dasar Linux untuk Pemula</h1>
+       <p>
+         Selamat datang pada panduan perintah dasar Linux. Halaman ini ditujukan bagi Anda yang masih baru dengan Linux dan terminalnya. Di sini, kami menjelaskan beberapa perintah yang sering digunakan serta contoh penggunaannya untuk membantu Anda memulai.
+       </p>
+
+       <h2>Pendahuluan</h2>
+       <p>
+         Terminal Linux adalah antarmuka berbasis teks yang memungkinkan interaksi langsung dengan sistem operasi. Meskipun terlihat sederhana, terminal sangat powerful dan efisien untuk mengelola file, direktori, dan menjalankan berbagai tugas.
+       </p>
+
+       <h2>Perintah Dasar Linux</h2>
+
+       <h3>1. Navigasi Direktori</h3>
+       <ul>
+         <li>
+           <strong>pwd</strong> - Menampilkan direktori kerja saat ini.
+           <pre><code>$ pwd
+     /home/user</code></pre>
+         </li>
+         <li>
+           <strong>ls</strong> - Menampilkan daftar file dan direktori dalam direktori saat ini.
+           <pre><code>$ ls
+     Documents  Downloads  Music  Pictures</code></pre>
+         </li>
+         <li>
+           <strong>cd</strong> - Mengganti direktori kerja.
+           <pre><code>$ cd Documents
+     $ pwd
+     /home/user/Documents</code></pre>
+         </li>
+       </ul>
+
+       <h3>2. Manipulasi File dan Direktori</h3>
+       <ul>
+         <li>
+           <strong>mkdir</strong> - Membuat direktori baru.
+           <pre><code>$ mkdir projek_baru</code></pre>
+         </li>
+         <li>
+           <strong>rmdir</strong> - Menghapus direktori kosong.
+           <pre><code>$ rmdir direktori_kosong</code></pre>
+         </li>
+         <li>
+           <strong>touch</strong> - Membuat file kosong atau memperbarui timestamp file.
+           <pre><code>$ touch file_baru.txt</code></pre>
+         </li>
+         <li>
+           <strong>cp</strong> - Menyalin file atau direktori.
+           <pre><code>$ cp file_asli.txt file_salinan.txt
+     $ cp -r folder_asli folder_salinan</code></pre>
+         </li>
+         <li>
+           <strong>mv</strong> - Memindahkan atau mengganti nama file/direktori.
+           <pre><code>$ mv file_lama.txt file_baru.txt
+     $ mv folder_lama folder_baru</code></pre>
+         </li>
+         <li>
+           <strong>rm</strong> - Menghapus file atau direktori.
+           <pre><code>$ rm file_tidak_diperlukan.txt
+     $ rm -r folder_tidak_diperlukan</code></pre>
+         </li>
+       </ul>
+
+       <h3>3. Melihat Isi File</h3>
+       <ul>
+         <li>
+           <strong>cat</strong> - Menampilkan isi file di terminal.
+           <pre><code>$ cat file.txt</code></pre>
+         </li>
+         <li>
+           <strong>less</strong> - Menampilkan isi file dengan kemampuan scroll.
+           <pre><code>$ less file.txt</code></pre>
+         </li>
+       </ul>
+
+       <h3>4. Pencarian Teks dalam File</h3>
+       <ul>
+         <li>
+           <strong>grep</strong> - Mencari pola teks dalam file.
+           <pre><code>$ grep "kata_kunci" file.txt</code></pre>
+         </li>
+       </ul>
+
+       <h2>Tips Menggunakan Terminal</h2>
+       <ul>
+         <li>Gunakan tombol <code>Tab</code> untuk auto-completion nama file atau direktori.</li>
+         <li>Gunakan panah atas dan bawah untuk menelusuri perintah yang pernah digunakan sebelumnya.</li>
+         <li>Pelajari opsi tambahan pada perintah dengan menggunakan <code>--help</code> atau <code>man</code> (manual), misalnya:
+           <pre><code>$ man ls</code></pre>
+         </li>
+       </ul>
+     </div>
+
+
+
     </body>
 </html>
