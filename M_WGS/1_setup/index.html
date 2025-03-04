@@ -70,10 +70,6 @@
         <h4>rahadian@apps.ipb.ac.id</h4>
         <div class="nav">
             <a href="#intro">Instalasi WSL2 pada Windows</a>
-            <a href="#setup">Setup Conda</a>
-            <a href="#qc-section">Quality Control with NanoPlot</a>
-            <a href="#assembly-section">Assembly de Novo with Flye</a>
-            <a href="#polishing-section">Assembly Polishing with Medaka</a>
         </div>
     </div>
 
@@ -115,6 +111,7 @@
               <img src="images/Ubuntu_setup.png" alt="setup Ubuntu account">
               <figcaption>Figure 2. Ubuntu account setup. Ketikkan nama user anda (bebas) lalu klik enter, berikutnya masukkan password (ketikkan tidak akan ditunjukkan di layar) lalu enter, dan ulangi sekali lagi untuk password. Abaikan versi Ubuntu 20.04 LTS di atas bila berbeda dengan yang anda install.</figcaption>
           </div>
+          <p></p>
           <div class="image" id="ubuntu2">
               <img src="images/Ubuntu_finished.png" alt="finished Ubuntu setup">
               <figcaption>Figure 3. Tampilan Ubuntu setelah selesai membuat <i>user account</i>.</figcaption>
@@ -169,102 +166,5 @@
           </ul>
         </div>
       </div>
-
-    <div class="container" id="setup">
-        <h1>Setup your UseGalaxy</h1>
-        <div class="section" id="usegalaxy">
-            <p>In order to run bioinformatic analysis, participant must have an account at <a href="https://usegalaxy.eu">usegalaxy.eu</a> webserver</p>
-        </div>
-        <div class="image" id="image2">
-        <img src="images/usegalaxy.png" alt="UseGalaxy Europe Portal">
-        <h5>Figure 2. UseGalaxy web server on Europe portal</h5></div>
-        <div class="section" id="usegalaxy2">
-        <h3>Things to do</h3>
-            <ul>
-                <li><strong>Login:</strong> login to UseGalaxy using your own credential. Create one if haven't.</li>
-                <li><strong>History:</strong> Always use new history for different analysis project/subproject. Never mixed up analysis!</li>
-                <li><strong>Prepare data:</strong> Make sure you have your data available to upload/fetch, look below for example data in this training.</li>
-                <li><strong>Ask:</strong> If you have any question or need help :-)</li>
-            </ul>
-        <p> </p>
-        <p>For this training we will use data from Dhar et al. (2019) <a href="https://doi.org/10.1093/gigascience/giz038">https://doi.org/10.1093/gigascience/giz038</a></p>
-        <p>The authors performed whole genome sequencing on Blue Indian Peacock using ONT and Illumina. In this training we will use only Illumina reads. This reads was generated from MinION devices
-            using Flowcell FLO-MIN106 and kit SQK-LSK108.</p>
-            <ul>
-            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.01.fastq">https://zenodo.org/records/12706524/files/peacock_0.01.fastq</a> (subsampled to 1% reads, 33,9 Mb)</li>
-            <li><a href="https://zenodo.org/records/12706524/files/peacock_0.05.fastq">https://zenodo.org/records/12706524/files/peacock_0.05.fastq</a> (subsampled to 5% reads, 165,4 Mb)</li></ul>
-        </div>
-
-    </div>
-
-        <div class="container" id="qc-section">
-        <h1>Quality Control with NanoPlot</h1>
-        <div class="section" id="quality-check">
-            <h2>Overview</h2>
-            <p>Quality Control (QC) is a crucial step in DNA sequencing to ensure that the data generated is accurate and reliable. </p>
-            <p>The sequencing technologies usually produce basecalls with varying quality. In addition, there could be sample-specific issues in your sequencing run, such as adapter contamination. It is standard procedure to check the quality of the reads and identify problems before doing further analysis.
-           Checking the quality and making some decisions for the downstream analysis can influence the outcome of your project. This is very important for long-read sequences like ONT. </p>
-            <p>Nanopore sequencing is known for its relatively high error rates, particularly in homopolymeric regions (stretches of the same nucleotide). The error rate can range from 5% to 15%, although recent advancements have improved this somewhat.
-            The accuracy of base calling in nanopore sequencing can be compromised due to the complex process of interpreting changes in electrical current as DNA passes through the nanopore. While improvements in algorithms and technology are ongoing, base calling remains less accurate than Illumina.</p>
-
-        <h3>Steps to do:</h3>
-            <h4>Upload data</h4>
-            <ul>
-                <li>Click <strong>Upload Data</strong> button (upper left), then choose <strong>Paste/Fetch data</strong></li>
-                <li>In the new pop-up windowd leave file name as default <strong>New File</strong>, copy and paste the peacock reads link above (choose either 1% or 5%) on the box under file name</li>
-                <li>Hit blue <strong>Start</strong> button and read will be downloaded directly to UseGalaxy</li>
-            </ul>
-
-            <h4>Quality check with NanoPlot</h4>
-            <ul>
-                <li>In the search box of tools (upper left), type <strong>NanoPlot</strong>, then click on the search result "<strong>NanoPlot</strong>: Plotting suite for Oxford....."</li>
-                <li>on the middle workspace, NanoPlot parameter will be displayed. Make sure you select the uploaded fastq file in the "<strong>files</strong>" option</li>
-                <li>Under <strong>Options for filtering or transforming input prior to plotting</strong>, set <i><strong>--readtype</strong></i> to "<strong>1D</strong>"</li>
-                <li>Under <strong>Options for customizing the plots created</strong>, set <i><strong>--color</strong></i> to "<strong>crimson</strong>",
-                <i><strong>--plots</strong></i> to "<strong>dots</strong>", <i><strong>--N50</strong></i> to "<strong>Yes</strong>"</li>
-                <li>Hit the <strong>Run tool</strong> button to start the QC</li>
-            </ul>
-            </div>
-    </div>
-
-    <div class="container" id="assembly-section">
-        <h1>Assembly de Novo with Flye</h1>
-        <div class="section" id="assembly">
-            <h2>Overview</h2>
-            <p>Flye is using a repeat graph as the core data structure. Compared to de Bruijn graphs (which require exact k-mer matches), repeat graphs are built using approximate sequence matches, and can tolerate the higher noise of SMS reads.
-                The edges of a repeat graph represent the genomic sequence, and nodes define the junctions. Each edge is classified as unique or repetitive. The genome traverses the graph (in an unknown way), so each unique edge appears exactly once in this traversal.
-                Repeat graphs reveal the repeat structure of the genome, which helps to reconstruct an optimal assembly.</p>
-            </div>
-        <div class="image" id="image3">
-        <img src="images/flye.png" alt="Flye Assembler">
-        <h5>Figure 3. Repeat graph of bacteria assembly using Flye.  Each edge is labeled with its id, length, and coverage. Repetitive edges are shown in color, and unique edges are black.</h5></div>
-
-        <div class="section" id="assembly2">
-        <h4>Assembly with Flye</h4>
-            <ul>
-                <li>In the search box of tools (upper left), type <strong>Flye</strong>, then click on the search result "<strong>Flye</strong> de novo assembler....."</li>
-                <li>on the middle workspace, Flye parameter will be displayed. Make sure you select the uploaded fastq file in the "<strong>Input reads</strong>" option</li>
-                <li>Set <strong>Mode</strong> to "<strong>Nanopore raw (--nano-raw)</strong>"</li>
-                <li>Set <strong>Enable scaffolding using graph</strong> to "<strong>Yes</strong>" </li>
-                <li>Leave everything else to default, then hit the <strong>Run tool</strong> button to start the assembly</li>
-            </ul>
-            </div>
-        </div>
-
-    <div class="container" id="polishing-section">
-        <h1>Assembly Polishing with Medaka</h1>
-        <div class="section" id="polishing">
-            <h2>Overview</h2>
-            <p>Medaka is a tool to create consensus sequences and variant calls from nanopore sequencing data. This task is performed using neural networks applied a pileup of individual sequencing reads against a draft assembly. It provides state-of-the-art results outperforming sequence-graph based methods and signal-based methods, whilst also being faster.</p>
-
-            <h4>Polishing with medaka consensus pipeline</h4>
-            <ul>
-                <li>In the search box of tools (upper left), type <strong>Medaka</strong>, then click on the search result "<strong>medaka consensus pipeline</strong> assembly polishing....."</li>
-                <li>on the middle workspace, medaka parameter will be displayed. Select the uploaded fastq under "<strong>Select basecalls</strong>" and contig result of Flye under "<strong>Select assembly</strong>"</li>
-                <li>Set <strong>Select model</strong> to "<strong>R941_min_high_g360</strong>"</li>
-                <li>Leave everything else to default, then hit the <strong>Run tool</strong> button to start the polishing</li>
-            </ul>
-        </div>
-    </div>
-</body>
+    </body>
 </html>
