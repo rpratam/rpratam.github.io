@@ -79,23 +79,79 @@
 
         <div class="container" id="intro">
         <h1>Instalasi WSL2 pada Windows</h1>
-        <div class="section" id="intro-WSL2">
-            <h2>Overview</h2>
-            <p>DNA assembly in short is the act to build a complete picture of longer DNA sequence (chromosome, genome) from thousand to million
-                pieces of reads. In general, <u>strategy for DNA assembly</u> is either reference-guided assembly or de novo assembly.
-
-            <h3>Reference-guided Assembly</h3>
-            <p>This strategy utilize reference sequence as template to assemble DNA fragments. Prior knowledge of target DNA must been known before assembly process.
-            This strategy use less computation resources, fast, and able to achieve high contiguous assembly.</p>
-            <p>However, reference-guided assembly is not without its disadvantages. For starters, structural variations cannot be detected, as assembled sequence will be biased toward reference DNA structure.
-            Due to bias toward reference, more diverged regions may not be reconstructed and missing, lead to reduced diversity in the target assembly.</p>
-
-            <h3>De Novo Assembly</h3>
-            <p>De novo means no prior knowledge being used in the assembly process. No reference being used in this assembly, reads are being stitched from scratch.
-            De novo assembly are superior that reference-guided assembly in term discovering structure variants within the target genome.</p>
-            <p>De novo assembly have its disadvantages compared to reference-guided assembly, which is more heavy in assembly computation. More computing resources are needed for de novo assembly, make it
-            hard to perform assembly on complex genome such as eukaryotes.</p>
+        <div class="section" id="system_requirement">
+          <h2>Prasyarat</h2>
+          <p>Sebelum melakukan instalasi WSL2, pastikan:</p>
+          <ul>
+            <li><strong>Versi Windows:</strong> Sistem operasi Windows adalah Windows 10 (versi 2004 dan lebih baru) atau Windows 11.</li>
+            <li><strong>Virtualisasi:</strong> Hardware mendukung virtualisasi dan telah diaktifkan di BIOS.</li>
+            <li><strong>Koneksi Internet:</strong> Diperlukan untuk mengunduh komponen dan distribusi Linux dari Microsoft Store.</li>
+          </ul>
+          <p><b>Cara Periksa Versi Windows</b></p>
+          <p>Pastikan Windows yang digunakan memenuhi syarat. Buka <em>Command Prompt</em> atau <em>PowerShell</em> dan jalankan (ketik lalu enter):</p>
+          <pre><code>winver</code></pre>
         </div>
+
+        <div class="section" id="installation">
+          <h2>Langkah-langkah Instalasi</h2>
+          <h2>A. Instalasi Otomatis (Windows 11 atau Windows 10 versi 2004 ke atas)</h2>
+          <p>Anda sekarang dapat menginstal semua yang Anda butuhkan untuk menjalankan WSL dengan satu perintah. Klik tombol <b>Start</b>, sorot <i>PowerShell</i> atau <i>Windows Command Prompt</i>, klik kanan dan pilih <b>Jalankan sebagai administrator</b>, selanjutnya jalankan perintah: </p>
+
+          <pre><code>wsl --install</code></pre>
+
+          <p>Setelah instalasi selesai, <i>restart</i> komputer Anda.</p>
+
+          <p>Perintah ini akan memungkinkan fitur yang diperlukan untuk menjalankan WSL dan menginstal distribusi Ubuntu Linux secara default.</p>
+
+
+          <h2>B. Instalasi Manual (Windows 10 sebelum versi 2004)</h2>
+          <h3>1. Aktifkan Fitur WSL dan Virtual Machine Platform</h3>
+          <p>Buka <strong>PowerShell</strong> dengan hak istimewa Administrator, kemudian jalankan perintah berikut:</p>
+          <p><strong>Aktifkan WSL:</strong></p>
+          <pre><code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></pre>
+          <p><strong>Aktifkan Virtual Machine Platform:</strong></p>
+          <pre><code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></pre>
+
+          <h3>2. Restart Komputer</h3>
+          <p>Setelah mengaktifkan kedua fitur tersebut, restart komputer agar perubahan dapat diterapkan.</p>
+
+          <h3>3. Set WSL2 sebagai Versi Default</h3>
+          <p>Setelah sistem menyala kembali, buka <strong>PowerShell</strong> sebagai Administrator dan jalankan perintah berikut:</p>
+          <pre><code>wsl --set-default-version 2</code></pre>
+          <p>Perintah ini memastikan bahwa distribusi Linux yang diinstal selanjutnya akan menggunakan WSL2 sebagai versi default.</p>
+
+          <h3>4. Instal Distribusi Linux</h3>
+          <p>Instal distribusi Linux pilihan Anda melalui Microsoft Store:</p>
+          <ul>
+            <li>Buka <strong>Microsoft Store</strong>.</li>
+            <li>Cari distribusi Linux (misalnya, <em>Ubuntu</em>).</li>
+            <li>Klik <strong>Dapatkan</strong> atau <strong>Instal</strong> untuk mengunduh distribusi tersebut.</li>
+          </ul>
+
+          <h3>5. Selesaikan Pengaturan Distribusi Linux</h3>
+          <p>Setelah instalasi selesai:</p>
+          <ul>
+            <li>Buka aplikasi Linux yang telah terinstal.</li>
+            <li>Ikuti petunjuk di layar untuk melakukan konfigurasi awal, seperti pembuatan akun pengguna dan pengaturan password.</li>
+          </ul>
+
+          <h3>6. Verifikasi Instalasi</h3>
+          <p>Untuk memastikan WSL2 telah terpasang dengan benar, buka <strong>PowerShell</strong> dan jalankan:</p>
+          <pre><code>wsl --list --verbose</code></pre>
+          <p>Perintah ini akan menampilkan daftar distribusi Linux beserta versi WSL yang digunakan.</p>
+        </div>
+        <div class="section" id="Troubleshooting">
+          <h2>Troubleshooting</h2>
+          <ul>
+            <li><strong>Kesalahan saat mengaktifkan fitur:</strong> Pastikan menjalankan PowerShell sebagai Administrator dan periksa kembali apakah sistem telah memenuhi prasyarat.</li>
+            <li><strong>Distribusi tidak berjalan dengan WSL2:</strong> Pastikan perintah <code>wsl --set-default-version 2</code> telah dijalankan. Jika perlu, ubah versi WSL untuk distribusi tertentu dengan perintah:
+              <pre><code>wsl --set-version &lt;NamaDistribusi&gt; 2</code></pre>
+          </ul>
+          <h2>Referensi</h2>
+          <ul>
+            <li><a href="https://learn.microsoft.com/id-id/windows/wsl/install" target="_blank">Instalasi WSL2 pada Windows</a></li>
+          </ul>
+        </div
         <div class="image" id="image1">
             <img src="images/assembly.png" alt="DNA Assembly">
             <h5>Figure 1. DNA assembly strategies. Reference-guided assembly often called resequencing.</h5>
