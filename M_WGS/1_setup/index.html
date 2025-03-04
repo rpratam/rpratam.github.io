@@ -70,14 +70,14 @@
         <h4>rahadian@apps.ipb.ac.id</h4>
         <div class="nav">
             <a href="#intro">Instalasi WSL2 pada Windows</a>
-            <a href="#setup">Setup your UseGalaxy</a>
+            <a href="#setup">Setup Conda</a>
             <a href="#qc-section">Quality Control with NanoPlot</a>
             <a href="#assembly-section">Assembly de Novo with Flye</a>
             <a href="#polishing-section">Assembly Polishing with Medaka</a>
         </div>
     </div>
 
-        <div class="container" id="intro">
+    <div class="container" id="intro">
         <h1>Instalasi WSL2 pada Windows</h1>
         <div class="section" id="system_requirement">
           <h2>Prasyarat</h2>
@@ -90,6 +90,10 @@
           <p><b>Cara Periksa Versi Windows</b></p>
           <p>Pastikan Windows yang digunakan memenuhi syarat. Buka <em>Command Prompt</em> atau <em>PowerShell</em> dan jalankan (ketik lalu enter):</p>
           <pre><code>winver</code></pre>
+          <div class="image" id="winver">
+              <img src="images/winver.png" alt="Windows Version">
+              <figcaption>Figure 1. Windows version. At least Windows 10 is needed for WSL2 installation.</figcaption>
+          </div>
         </div>
 
         <div class="section" id="installation">
@@ -102,6 +106,15 @@
           <p>Setelah instalasi selesai, <i>restart</i> komputer Anda.</p>
 
           <p>Perintah ini akan memungkinkan fitur yang diperlukan untuk menjalankan WSL dan menginstal distribusi Ubuntu Linux secara default.</p>
+          <p>Setelah <i>restart</i> PC selesai:</p>
+          <ul>
+            <li>Buka aplikasi Linux yang telah terinstal (start > Ubuntu).</li>
+            <li>Ikuti petunjuk di layar untuk melakukan konfigurasi awal, seperti pembuatan akun pengguna dan pengaturan password.</li>
+          </ul>
+          <div class="image" id="ubuntu1">
+              <img src="images/Ubuntu_setup.png" alt="setup Ubuntu account">
+              <figcaption>Figure 2. Ubuntu account setup. Ketikkan nama user anda (bebas) lalu klik enter, berikutnya masukkan password (ketikkan tidak akan ditunjukkan di layar) lalu enter, dan ulangi sekali lagi untuk password.</figcaption>
+          </div>
 
 
           <h2>B. Instalasi Manual (Windows 10 sebelum versi 2004)</h2>
@@ -113,7 +126,7 @@
           <pre><code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></pre>
 
           <h3>2. Restart Komputer</h3>
-          <p>Setelah mengaktifkan kedua fitur tersebut, restart komputer agar perubahan dapat diterapkan.</p>
+          <p>Setelah mengaktifkan kedua fitur tersebut, <i>restart</i> komputer agar perubahan dapat diterapkan.</p>
 
           <h3>3. Set WSL2 sebagai Versi Default</h3>
           <p>Setelah sistem menyala kembali, buka <strong>PowerShell</strong> sebagai Administrator dan jalankan perintah berikut:</p>
@@ -151,12 +164,8 @@
           <ul>
             <li><a href="https://learn.microsoft.com/id-id/windows/wsl/install" target="_blank">Instalasi WSL2 pada Windows</a></li>
           </ul>
-        </div
-        <div class="image" id="image1">
-            <img src="images/assembly.png" alt="DNA Assembly">
-            <h5>Figure 1. DNA assembly strategies. Reference-guided assembly often called resequencing.</h5>
         </div>
-    </div>
+      </div>
 
     <div class="container" id="setup">
         <h1>Setup your UseGalaxy</h1>
